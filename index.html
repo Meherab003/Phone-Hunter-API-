@@ -13,20 +13,28 @@
 
 <body>
     <header>
-        <h2 class="text-6xl">Phone Hunting</h2>
+        <h2 class="text-6xl font-extrabold bg-[#747fff] text-slate-900 text-center p-4">Phone Hunting</h2>
     </header>
     <main>
         <!-- Search section -->
-        <section class="bg-gray-100 p-4 m-4 mx-auto flex justify-between gap-2">
+        <section class="bg-slate-900 p-4 m-4 mx-auto flex justify-between gap-2">
             <input id="search-field" type="text" placeholder="Type here" class="input input-bordered w-4/5 flex-1" />
             <button onclick="handleSearch()" class="btn btn-primary">Search</button>
         </section>
+
+        <div id="loading" class="text-center text-primary my-40 hidden">
+            <span class="loading loading-infinity loading-lg"></span>
+        </div>
 
         <section>
             <div id="phone-container" class="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mt-10 mx-auto w-11/12">
 
             </div>
         </section>
+
+        <div id="show-more-container" class="my-5 mx-auto w-full flex justify-center hidden">
+            <button class="btn btn-outline btn-primary w-1/2">Show All</button>
+        </div>
     </main>
     <footer>
 
