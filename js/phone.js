@@ -8,6 +8,8 @@ const loadPhone = async (searchText, isShowAll) => {
   // console.log(phones);
   displayPhones(phones, isShowAll);
 };
+
+
 const displayPhones = (phones, isShowAll) => {
   const phoneContainer = document.getElementById("phone-container");
 
@@ -35,12 +37,10 @@ const displayPhones = (phones, isShowAll) => {
     phoneCard.classList.add("mx-auto");
     phoneCard.innerHTML = `
             <figure class="mt-4"><img src="${phone.image}" alt="Shoes" /></figure>
-             <div class="card-body p-4">
-                <h2 class="text-xl font-medium text-slate-950 text-center">${phone.phone_name}</h2>
+             <div class="p-4 flex flex-col gap-4">
+                 <h2 class="text-xl font-medium text-slate-950 text-center">${phone.phone_name}</h2>
                  <p class="text-slate-800 text-center" >Model: ${phone.slug}</p>
-                 <div class="mt-4 card-actions justify-center">
-                    <button onclick="handleShowDetails('${phone.slug}')" class="btn btn-primary">Show Detail</button>
-                </div>
+                 <button onclick="handleShowDetails('${phone.slug}')" class="btn btn-primary">Show Detail</button>
             </div>
         `;
 
@@ -86,10 +86,10 @@ const showPhoneDetails = (phone) => {
   const showDetailsContainer = document.getElementById("show-detail-container");
 
   showDetailsContainer.innerHTML = `
-        <h3 class="font-bold text-lg">${phone.name}</h3>
-        <img class="mt-4" src="${phone.image}" alt="" />
-        <p class="py-4">Model: ${phone.slug}</p>
-        <p class="py-1">Brand: ${phone.brand}</p>
+        <h3 class="font-bold text-lg text-slate-950">${phone.name}</h3>
+        <img class="mt-4 text-slate-900" src="${phone.image}" alt="" />
+        <p class="py-4 text-slate-900">Model: ${phone.slug}</p>
+        <p class="py-1 text-slate-900">Brand: ${phone.brand}</p>
     `;
 
   show_details_modal.showModal();
